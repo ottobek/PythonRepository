@@ -3,17 +3,32 @@
 ## 1. Age Calculator
 Write a Python program to ask for a user's name and year of birth, then calculate and display their age.
 
+name = input("Ismingizni kiriting: ")
+birth_year = int(input("Tug'ilgan yilingizni kiriting: "))
+age = 2025 - birth_year 
+print(f"Salom {name}, siz {age} yoshdasiz, do'stim.") 
+
+
 ## 2. Extract Car Names
 Extract car names from the following text:
 ```python
 txt = 'LMaasleitbtui'
 ```
 
+txt = 'LMaasleitbtui'
+car_name = txt[1] + txt[2] + txt[5] + txt[7] + txt[9] + txt[11]
+print(car_name)  # This will print 'Malibu'
+
 ## 3. Extract Car Names
 Extract car names from the following text:
 ```python
 txt = 'MsaatmiazD'
 ```
+
+txt = 'Msaatmiazd'
+car_name = txt[0] + txt[3] + txt[8] + txt[9] + txt[2]
+print(car_name)  # This will print 'Mazda'
+
 
 ## 4. Extract Residence Area
 Extract the residence area from the following text:
