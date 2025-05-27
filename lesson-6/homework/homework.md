@@ -76,11 +76,48 @@ The first and only line contains the integer, `n`.
 ### Output Format
 Print `n` lines, one corresponding to each `i^2` where `0 <= i < n`.
 
+
+def squares_generator(n):
+    """
+    Generate and print squares of numbers from 0 to n-1
+    
+    Args:
+    n (int): Upper limit of numbers to square
+    """
+    # Loop through numbers from 0 to n-1
+    for i in range(n):
+        # Calculate and print the square of each number
+        print(i ** 2)
+
+# Input method to match the problem description
+def main():
+    # Read the input number
+    n = int(input().strip())
+    
+    # Call the function to generate squares
+    squares_generator(n)
+
+# Uncomment the line below to run with manual input
+# main()
+
+# Test cases
+print("Test case 1:")
+squares_generator(5)
+
+print("\nTest case 2:")
+squares_generator(3)
+
 ---
 
 ## 3. Loop-Based Exercises
 
 ### Exercise 1: Print first 10 natural numbers using a while loop
+
+i = 1
+
+while i <= 10:
+    print(i)
+    i += 1  # Increment the counter
 
 ### Exercise 2: Print the following pattern
 ```
@@ -91,12 +128,21 @@ Print `n` lines, one corresponding to each `i^2` where `0 <= i < n`.
 1 2 3 4 5
 ```
 
+n = 5
+for i in range(1, n + 1):
+    for j in range(1, i + 1):
+        print(j, end=' ')
+    print()
+
 ### Exercise 3: Calculate sum of all numbers from 1 to a given number
 **Example:**
 ```
 Enter number 10
 Sum is: 55
 ```
+number = int(input("Enter number: "))
+total = sum(range(1, number + 1))
+print("Sum is:", total)
 
 ### Exercise 4: Print multiplication table of a given number
 **Example:**
@@ -113,11 +159,23 @@ Sum is: 55
 20
 ```
 
+num = int(input("Enter a number: "))  
+for i in range(1, 11):
+    print(f"{num} x {i} = {num * i}")  
 ### Exercise 5: Display numbers from a list using a loop
 **Given:**
 ```python
 numbers = [12, 75, 150, 180, 145, 525, 50]
 ```
+
+numbers = [12, 75, 150, 180, 145, 525, 50]
+for number in numbers:
+    if number > 150:
+        continue
+    if number > 70:
+        print(number) 
+
+        
 **Expected Output:**
 ```
 75
@@ -132,6 +190,9 @@ numbers = [12, 75, 150, 180, 145, 525, 50]
 Output: 5
 ```
 
+number = input()
+print("Output:", len(number))
+
 ### Exercise 7: Print reverse number pattern
 ```
 5 4 3 2 1
@@ -140,6 +201,12 @@ Output: 5
 2 1
 1
 ```
+
+n = 5
+for i in range(n, 0, -1):
+    for j in range(i, 0, -1):
+        print(j, end=' ')
+    print()
 
 ### Exercise 8: Print list in reverse order using a loop
 **Given:**
@@ -155,6 +222,10 @@ list1 = [10, 20, 30, 40, 50]
 10
 ```
 
+list1 = [10, 20, 30, 40, 50]
+for item in reversed(list1):
+    print(item)
+
 ### Exercise 9: Display numbers from -10 to -1 using a for loop
 ```
 -10
@@ -169,6 +240,9 @@ list1 = [10, 20, 30, 40, 50]
 -1
 ```
 
+for i in range(-10, 0):
+    print(i)
+
 ### Exercise 10: Display message “Done” after successful loop execution
 **Example:**
 ```python
@@ -179,6 +253,10 @@ list1 = [10, 20, 30, 40, 50]
 4
 Done!
 ```
+
+for i in range(5):
+    print(i)
+print("Done!")
 
 ### Exercise 11: Print all prime numbers within a range
 **Example:**
@@ -191,6 +269,19 @@ Prime numbers between 25 and 50:
 43
 47
 ```
+
+start, end = 25, 50
+print("Prime numbers between", start, "and", end, ":")
+for num in range(start, end + 1):
+    is_prime = True
+    if num < 2:
+        is_prime = False
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            is_prime = False
+            break
+    if is_prime:
+        print(num)
 
 ### Exercise 12: Display Fibonacci series up to 10 terms
 **Example:**
