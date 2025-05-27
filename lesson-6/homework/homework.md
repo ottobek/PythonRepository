@@ -11,7 +11,40 @@ Given a string `txt`, insert an underscore (`_`) after every third character. If
 **Output:** `ass_alom`
 
 **Input:** `abcabcabcdeabcdefabcdefg`
-**Output:** `abc_abc_abcd_abcd_abcdef`
+**Output:** `abc_abcab_cdeabcd_efabcdef_g`
+
+def insert_underscores(txt):
+    result = []
+    count = 0
+    i = 0
+    vowels = 'aeiou'
+
+    while i < len(txt):
+        result.append(txt[i])
+        count += 1
+
+        if count == 3:
+                     if txt[i] in vowels or (i + 1 < len(txt) and txt[i + 1] == '_'):
+                if i + 1 < len(txt) and txt[i + 1] != '_':
+                    result.append(txt[i + 1])
+                    i += 1
+            if i + 1 < len(txt):  # Oxiriga qo‘shilmasligi kerak
+                result.append('_')
+            count = 0
+        i += 1
+
+    # Agar oxirgi belgi '_' bo‘lsa, olib tashlaymiz
+    if result and result[-1] == '_':
+        result.pop()
+
+    return ''.join(result)
+
+
+print(insert_underscores("hello"))          # hel_lo
+print(insert_underscores("assalom"))        # ass_alom
+print(insert_underscores("abcabcabcdeabcdefabcdefg"))  
+# abc_abcab_cdeabcd_efabcdef_g
+
 
 ---
 
