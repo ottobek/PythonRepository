@@ -113,11 +113,10 @@ squares_generator(3)
 
 ### Exercise 1: Print first 10 natural numbers using a while loop
 
-i = 1
-
-while i <= 10:
-    print(i)
-    i += 1  # Increment the counter
+count = 1
+while count <= 10:
+    print(count)
+       count = count + 1 
 
 ### Exercise 2: Print the following pattern
 ```
@@ -290,12 +289,31 @@ Fibonacci sequence:
 0  1  1  2  3  5  8  13  21  34
 ```
 
+n_terms = 10  
+
+fib_sequence = [0, 1]  
+
+for i in range(2, n_terms):  
+    next_term = fib_sequence[i - 1] + fib_sequence[i - 2]  
+    fib_sequence.append(next_term)  
+
+print("Fibonacci sequence:")  
+for term in fib_sequence:  
+    print(term, end="  ")
+
 ### Exercise 13: Find the factorial of a given number
 **Example:**
 ```
 5! = 120
 ```
-
+def factorial(n):  
+    result = 1  # Initialize result  
+    for i in range(1, n + 1):  
+        result *= i  # Multiply result by each number up to n  
+    return result  
+number = int(input("Enter a number: "))  
+fact = factorial(number)  
+print(f"{number}! = {fact}")
 ---
 
 ## 4. Return Uncommon Elements of Lists
@@ -311,4 +329,27 @@ Return the elements that are not common between two lists. The order of elements
 
 - **Input:** `list1 = [1, 1, 2, 3, 4, 2], list2 = [1, 3, 4, 5]`  
   **Output:** `[2, 2, 5]`
+
+  from collections import Counter  
+
+def uncommon_elements(list1, list2):  
+    combined = list1 + list2  
+    counts = Counter(combined)  
+    result = [item for item in counts if counts[item] == 1]  
+    return result  
+
+list1_a = [1, 1, 2]  
+list2_a = [2, 3, 4]  
+output_a = uncommon_elements(list1_a, list2_a)  
+print(f"Output: {output_a}")  
+
+list1_b = [1, 2, 3]  
+list2_b = [4, 5, 6]  
+output_b = uncommon_elements(list1_b, list2_b)  
+print(f"Output: {output_b}")  
+
+list1_c = [1, 1, 2, 3, 4, 2]  
+list2_c = [1, 3, 4, 5]  
+output_c = uncommon_elements(list1_c, list2_c)  
+print(f"Output: {output_c}")
 
