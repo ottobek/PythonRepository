@@ -87,38 +87,65 @@ print(numbers[3:8])    # (4, 5, 6, 7)
 ## 9. Count Occurrences in a List
 Create a list of colors and count how many times "blue" appears in the list.
 
-
+colors = ["blue", "red", "green", "brown", "blue"]  
+blue_count = colors.count("blue")  
+print(blue_count) 
 
   
 
 ## 10. Find the Index of an Element in a Tuple
 Given a tuple of animals, find the index of "lion".
 
-
+animals = ("dog", "cat", "elephant", "lion", "tiger")  
+lion_index = animals.index("lion")  
+print(lion_index)  
 
 
 ## 11. Merge Two Tuples
 Create two tuples of numbers and merge them into a single tuple.
 
-
+tuple1 = (1, 2, 3)  
+tuple2 = (4, 5, 6)  
+merged_tuple = tuple1 + tuple2  
+print(merged_tuple)
   
 
 ## 12. Find the Length of a List and Tuple
 Given a list and a tuple, find and print their lengths.
 
+my_list = [1, 2, 3, 4, 5]  
+my_tuple = (10, 20, 30, 40, 50)  
 
+print(len(my_list))   #list
+print(len(my_tuple))  #tuple 
   
 ## 13. Convert Tuple to List
 Create a tuple of five numbers and convert it into a list.
 
-
+my_tuple = (1, 2, 3, 4, 5)  
+my_list = list(my_tuple)  
+print(my_list)
 
 
 ## 14. Find Maximum and Minimum in a Tuple
 Given a tuple of numbers, find and print the maximum and minimum values.
 
+my_tuple = (5, 2, 9, 1, 7, 3)  
 
+#finding maximum value  
+max_value = max(my_tuple)  
+#finding minimum value  
+min_value = min(my_tuple)  
+
+print("Maximum value:", max_value)   
+print("Minimum value:", min_value) 
 
 ## 15. Reverse a Tuple
 Create a tuple of words and print it in reverse order.
 
+words_tuple = ("dushanba", "seshanba", "juma", "shanba")  
+
+# Reverse the tuple using slice with negative step  
+reversed_tuple = words_tuple[::-1]  
+
+print(reversed_tuple)   
